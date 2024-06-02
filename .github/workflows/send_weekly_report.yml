@@ -20,8 +20,8 @@ jobs:
 
     - name: Run the script
       env:
-        EMAIL: info@mukundan14.co.site
-        PASSWORD: gNBq8!@fn8*+U4&
-        RECIPIENT: info@mukundan14.co.site
+        EMAIL: mukundan.sankar14@gmail.com
+        PASSWORD: CEna14!@
+        RECIPIENT: mukundan.sankar14@gmail.com
       run: |
         python send_weekly_report.py
