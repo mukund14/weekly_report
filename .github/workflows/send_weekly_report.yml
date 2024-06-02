@@ -20,8 +20,10 @@ jobs:
 
     - name: Run the script
       env:
-        EMAIL: mukundan.sankar14@gmail.com
-        PASSWORD: CEna14!@
-        RECIPIENT: mukundan.sankar14@gmail.com
+        EMAIL: info@mukundan14.co.site
+        PASSWORD: ${{ secrets.PASSWORD }}
+        RECIPIENT: info@mukundan14.co.site
+        SMTP_SERVER: mail.mukundan14.co.site  # Update with your actual SMTP server
+        SMTP_PORT: '587'  # Or '465' if using SSL
       run: |
         python send_weekly_report.py
