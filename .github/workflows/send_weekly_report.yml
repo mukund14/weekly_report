@@ -1,0 +1,27 @@
+name: Send Weekly Report
+
+on:
+  schedule:
+    - cron: '0 11 * * 0'  # Runs at 11:00 AM UTC on Sundays
+  workflow_dispatch:
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Run the script
+      env:
+        EMAIL: info@mukundan14.co.site
+        PASSWORD: gNBq8!@fn8*+U4&
+        RECIPIENT: info@mukundan14.co.site
+      run: |
+        python send_weekly_report.py
