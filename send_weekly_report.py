@@ -3,13 +3,14 @@ from datetime import datetime
 import smtplib
 import imaplib
 import time
+import os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.header import Header
 
 # Email configuration
-sender_email = 'info@mukundan14.co.site' 
-sender_password = 'gNBq8!@fn8*+U4&'
+sender_email = os.getenv('SENDER_EMAIL')
+sender_password = os.getenv('SENDER_PASSWORD')
 recipient_email = 'info@mukundan14.co.site'
 subject = 'Weekly Entrepreneurial Content'
 
