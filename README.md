@@ -28,8 +28,11 @@ Ensure the .github/workflows/send_weekly_report.yml file is set up correctly.
 Run the Script Manually:
 You can also run the script manually to test:
 
-```sh
-  python weekly_report.py
+   ```sh
+   python weekly_report.py
+   
+
+  
 Files
 weekly_report.py: The main script that fetches and sends the email.
 .github/workflows/send_weekly_report.yml: GitHub Actions workflow file to schedule the script.
