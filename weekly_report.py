@@ -61,14 +61,16 @@ def fetch_marketing_articles():
         response = requests.get(url)
         soup = BeautifulSoup(response.content, 'html.parser')
         for item in soup.find_all('article', limit=5):  # Adjust limit as necessary
-            title = item.find('h2').get_text()
-            link = item.find('a')['href']
-            published = datetime.now().strftime("%Y-%m-%d")  # Example published date
-            articles.append({
-                "title": title,
-                "link": link,
-                "published": published
-            })
+            title_tag = item.find('h2')
+            if title_tag:
+                title = title_tag.get_text()
+                link = item.find('a')['href']
+                published = datetime.now().strftime("%Y-%m-%d")  # Example published date
+                articles.append({
+                    "title": title,
+                    "link": link,
+                    "published": published
+                })
     
     return articles
 
@@ -88,14 +90,16 @@ def fetch_podcasts():
         response = requests.get(url)
         soup = BeautifulSoup(response.content, 'html.parser')
         for item in soup.find_all('article', limit=5):  # Adjust limit as necessary
-            title = item.find('h2').get_text()
-            link = item.find('a')['href']
-            published = datetime.now().strftime("%Y-%m-%d")  # Example published date
-            podcasts.append({
-                "title": title,
-                "link": link,
-                "published": published
-            })
+            title_tag = item.find('h2')
+            if title_tag:
+                title = title_tag.get_text()
+                link = item.find('a')['href']
+                published = datetime.now().strftime("%Y-%m-%d")  # Example published date
+                podcasts.append({
+                    "title": title,
+                    "link": link,
+                    "published": published
+                })
     
     return podcasts
 
